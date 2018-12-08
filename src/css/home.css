@@ -1,0 +1,72 @@
+/* 顶部 */
+* {
+    padding: 0;
+    margin: 0;
+}
+.homeTop{
+    width: 100%;
+    height: 7.5rem;
+    background-color: #535353;
+    padding-top: 1.35rem;
+    display: flex;
+}
+.homeTopLeft{
+    font-size:0.8rem ;
+    color: #fff;
+    margin:0 0.6rem
+}
+.homeTopLeftBox {
+    height: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space:nowrap;
+}
+.homeTopLeftBox .icon-icon11 {
+    margin: 0 5px;
+}
+.homeTopCenter {
+    width: 100%;
+    position: relative;
+}
+.homeTopCenter input{
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #535353;
+    border-radius: 1.5rem;
+    padding: 0.1rem;
+    text-indent:1.3rem;
+}
+.homeTopCenter .icon-iconfont31sousuo {
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0.2rem;
+    top:0;
+}
+.homeTopRight {
+    margin: 0 0.6rem;
+    color: #fff;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+.homeTopRight i {
+    font-size: 1.15rem;
+}
+/* 轮播图 */
+.homeSlideshowbox{
+    display: flex;
+}
+.homeSlideshow {
+    width: 20%;
+    margin-top: 0.85rem;
+}
+.homeSlideshow img {
+    width: 70%;
+}
+.homeSlideshow ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
