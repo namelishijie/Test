@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0;
 }
+body {
+  font-size: 14px;
+  max-width: 768px;
+  margin: 0 auto;
+}
 fieldset, img, input, button {
   border: none;
   padding: 0;
