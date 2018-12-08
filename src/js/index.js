@@ -1,6 +1,5 @@
 var activePhone = false, activePassword = false,
-    phoneVal = '', passwordVal = '',
-    user = 'aaa', password = '123';
+    phoneVal = '', passwordVal = '';
 
 document.querySelectorAll('input').forEach( (item, index) => {
   item.oninput = function () {
@@ -10,7 +9,7 @@ document.querySelectorAll('input').forEach( (item, index) => {
         phoneVal = this.value;
         break;
       case 1:
-        activePassword = this.value.length >= 3 ? true : false;
+        activePassword = this.value.length >= 4 ? true : false;
         passwordVal = this.value;
         break;
     }
@@ -20,12 +19,26 @@ document.querySelectorAll('input').forEach( (item, index) => {
   }
 });
 
+document.querySelector('.index-code').onclick = function () {
+  setAjax.ajax({
+    type: 'get',
+    url: './index/code',
+    success: function (data) {
+      console.log(data)
+    }
+  })
+}
+
 document.querySelector('.index-login > button').onclick = function () {
   if(this.classList.contains('active')) {
-    if(phoneVal == user && passwordVal == password) {
-      window.location.href = './src/html/home.html'
-    }
+    let obj = {'user': phoneVal, 'password': passwordVal};
+    setAjax.ajax({
+      type: 'POST',
+      url: './index',
+      data: obj,
+      success: function (data) {
+        data.code == 200 ? window.location.href = data.url : '';
+      }
+    })
   }
 }
-var pop1 = new pop();
-pop1.upPop()

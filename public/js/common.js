@@ -5,12 +5,41 @@ rem();
 window.onresize = () => {
   rem();
 }
-
+var _thishref = window.location.href;
 // 判断是否登录
 if(!window.sessionStorage.getItem('toKen')) {
-  let _thishref = window.location.href;
   if(_thishref.slice(_thishref.lastIndexOf('/')+1, _thishref.length-5) != 'index') {
     window.location.href= '../../index.html';
+  }
+}
+
+var new_element=document.createElement("script");
+new_element.setAttribute('type','text/javascript');
+
+if(_thishref.slice(_thishref.lastIndexOf('/')+1, _thishref.length-5) != 'index') {
+  new_element.setAttribute('src','../../public/api/api.js');
+  document.querySelector('head').appendChild(new_element);
+}else {
+  new_element.setAttribute('src','./public/api/api.js');
+  document.querySelector('head').appendChild(new_element);
+}
+
+class setAjax {
+  constructor ( item={} ) {
+    this.url = item.url;
+    this.item = item;
+  }
+  static ajax ( item = {type: 'get' , url: '', data: '', success: ()=>{}, error: ()=>{} } ) {
+    new setAjax( item ).ajax;
+  }
+  get ajax() {
+    setTimeout(()=> {
+      for(let key in apis) {
+        if(apis[key] == this.url) {
+          api[key](this.item);
+        }
+      }
+    },200)
   }
 }
 
@@ -36,65 +65,6 @@ class pop {
       transform: translate(-50%, 0);
       border-radius: 5px;
     `;
-
     document.querySelector('body').appendChild(div);
   }
 }
-
-const apis = {
-  home: './home'
-}
-
-class setAjax {
-  constructor ( item={} ) {
-    this.url = item.url;
-    this.item = item;
-  }
-  static ajax ( item = {type: 'get' , url: '', data: '', success: ()=>{}, error: ()=>{} } ) {
-    new setAjax( item ).ajax;
-  }
-  get ajax() {
-    for(let key in apis) {
-      if(apis[key] == this.url) {
-        api[key](this.item);
-      }
-    }
-  }
-}
-
-const api = {
-  home(options) {
-    const item = {
-      subject: [
-        {url: '../images/navIcon/shuxue.png', name: '数学'},
-        {url: '../images/navIcon/yinyu.png', name: '英语'},
-        {url: '../images/navIcon/yuwen.png', name: '语文'},
-        {url: '../images/navIcon/wuli.png', name: '物理'},
-        {url: '../images/navIcon/zaixianke.png', name: '在线课'},
-        {url: '../images/navIcon/huaxue.png', name: '化学'},
-        {url: '../images/navIcon/aoshu.png', name: '奥数'},
-        {url: '../images/navIcon/dili.png', name: '地理'},
-        {url: '../images/navIcon/kexue.png', name: '科学'},
-        {url: '../images/navIcon/lishi.png', name: '历史'},
-        {url: '../images/navIcon/shengwu.png', name: '生物'},
-        {url: '../images/navIcon/zhengzhi.png', name: '政治'}
-      ]
-    }
-    return options.success(JSON.stringify(item));
-  },
-}
-
-
-
-setAjax.ajax({
-  type: 'get',
-  url: './home',
-  success: function (data) {
-    console.log(data)
-  }
-})
-
-
-
-
-
