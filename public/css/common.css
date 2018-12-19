@@ -99,3 +99,13 @@ s, i, em {
   justify-content: center;
   align-items: center;
 }
+
+
+@keyframes pop {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1)
+  }
+}
