@@ -1,6 +1,7 @@
 const apis = {
   index: './index',
   indexCode: './index/code',
+  register: './register',
   home: './home'
 }
 var new_element=document.createElement("script");
@@ -20,6 +21,13 @@ const api = {
   },
   indexCode (options) {
     new_element.setAttribute('src','./public/api/index.js');
+    head.insertBefore(new_element, script);
+    setTimeout(function() {
+      index.code(options)
+    },100);
+  },
+  register (options) {
+    new_element.setAttribute('src','./public/api/register.js');
     head.insertBefore(new_element, script);
     setTimeout(function() {
       index.code(options)

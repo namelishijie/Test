@@ -173,7 +173,7 @@ class getCodeTime {
   }
   /**
    * 倒计时开始
-   * @param success 倒计时结束回调 
+   * @param success 返回时间 
    */
   startTime ({success = () => {}} = {}) {
     this.success = success;
@@ -186,5 +186,51 @@ class getCodeTime {
       }
       this.time--;
     },this.sport)
+  }
+}
+
+/**
+ * 底部导航栏
+ * @param active 当前位置
+ * @param success 点击回调 
+ */
+function setFooter ({active, success = () => {}} = {}) {
+  if(active == undefined || active < 1 || active > 5 || typeof(active) != 'number') {
+    throw '请传底部导航栏active位置,类型为Number,不小于1且不大于5'
+  }
+  let html = document.createElement('footer'),
+      ul = '<ul>';
+  html.id = 'footer';
+  let arr = [
+    {name:'首页', class:'icon-iconfonticon-shouye'},
+    {name:'公开课', class:'icon-iconfontshu'},
+    {name:'帮我选', class:'icon-iconfontmark'},
+    {name:'学习', class:'icon-iconfontshu'},
+    {name:'我的', class:'icon-iconfontren1'}
+  ];
+  for(var key in arr) {
+    ul += `<li class="${active == Number(key)+1 ? 'active' : ''}"}><div><i class="iconfont ${arr[key].class}"></i></div><div><span>${arr[key].name}</span></div></li>`;
+  }
+  ul += '</ul>';
+  html.innerHTML = ul;
+  document.body.appendChild(html);
+  html.onclick = e => {
+    let ev = e || window.event,
+        target = ev.target || ev.srcElement,
+        name = target.nodeName.toLowerCase();
+    if( name == 'i' || name == 'span' ) {
+      let li = target.parentNode.parentNode;
+      Array.prototype.slice.call(li.parentNode.children).forEach( item => {
+        if( li == item ) {
+          item.classList.add('active');
+          success({
+            dom: item,
+            name: li.querySelector('span').innerText
+          });
+        } else {
+          item.classList.remove('active');
+        }
+      })
+    }
   }
 }

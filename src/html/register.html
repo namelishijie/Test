@@ -4,11 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>注册</title>
+  <link rel="stylesheet" href="../../public/css/common.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+    <!-- 顶部 -->
+    <div class="index-top">
+      <div>
+        <div class="top-leftImg" style="visibility:hidden;">
+          <img src="../images/left-1.png" alt="">
+        </div>
+        <h2>注册</h2>
+        <a href="javascript:void(0)" class="goLogin">登录</a>
+      </div>
+    </div>
   
+    <!-- logo -->
+    <div class="index-logo">
+      <img src="../../public/images/logo.png" alt="">
+    </div>
+  
+    <!-- 内容 -->
+    <div class="index-content"></div>
+  
+    <div class="index-login">
+      <button class="register">极速注册</button>
+    </div>
+
+    
+
 </body>
 </html>
+<script type="text/html" id='input'>
+  {{ each items}}
+    {{ if $value.class }}
+      <div class="content-input {{ $value.class }}">
+    {{ else }}
+      <div class="content-input">
+    {{ /if }}
+        <div>
+          <span>{{ $value.name }}</span>
+          <input type="{{ $value.password }}">
+        </div>
+        {{ if $index==0 }}<button class="index-code">{{ $value.codeName }}</button>{{ /if }}
+      </div>
+  {{ /each }}
+</script>
 <script src="../../public/js/common.js"></script>
+<script src="../../lib/template/template.js"></script>
+
 <script src="../js/register.js"></script>

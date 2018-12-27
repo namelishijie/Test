@@ -1,5 +1,5 @@
 var activePhone = false, activePassword = false,
-    phoneVal = '', passwordVal = '';
+    phoneVal = '', passwordVal = '', getCode = true;
 
 document.querySelectorAll('input').forEach( (item, index) => {
   item.oninput = function () {
@@ -9,7 +9,7 @@ document.querySelectorAll('input').forEach( (item, index) => {
         phoneVal = this.value;
         break;
       case 1:
-        activePassword = this.value.length >= 4 ? true : false;
+        activePassword = this.value.length >= 3 ? true : false;
         passwordVal = this.value;
         break;
     }
@@ -19,14 +19,30 @@ document.querySelectorAll('input').forEach( (item, index) => {
   }
 });
 
+document.querySelector('.goRegister').onclick = function () {
+  window.location.href = './src/html/register.html'
+}
+
 document.querySelector('.index-code').onclick = function () {
-  setAjax.ajax({
-    type: 'get',
-    url: './index/code',
-    success: function (data) {
-      console.log(data)
-    }
-  })
+  if(getCode && phoneVal.length >= 3) {
+    getCode = false;
+    let _this = this;
+    let code = new getCodeTime();
+    code.startTime({
+      success: function (data) {
+        _this.innerText = `再次获取${data}`;
+        data < 1 ? (getCode = true, _this.innerText = '获取验证码') : ''
+      }
+    });
+    setAjax.ajax({
+      type: 'get',
+      url: './index/code',
+      success: function (data) {
+        let getPop = new pop({text: data});
+        getPop.upPop();
+      }
+    })
+  }
 }
 
 document.querySelector('.index-login > button').onclick = function () {
