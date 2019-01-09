@@ -1,8 +1,8 @@
 const index = {
   login(options) {
-    let user = 'aaa', code = this.codeNum;
+    let user = 'aaa', code = this.codeNum, localUser = window.localStorage.getItem('localUser');
     if(options.type.toLowerCase() == 'post' && options.data) {
-      if(options.data.user == user && options.data.password == code) {
+      if(options.data.user == user || options.data.user == localUser && options.data.password == code) {
         window.sessionStorage.setItem('toKen', true);
         return options.success({code: 200, url: './src/html/home.html'});
       }

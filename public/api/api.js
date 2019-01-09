@@ -2,6 +2,7 @@ const apis = {
   index: './index',
   indexCode: './index/code',
   register: './register',
+  registerCode: './register/code',
   home: './home'
 }
 var new_element=document.createElement("script");
@@ -27,10 +28,17 @@ const api = {
     },100);
   },
   register (options) {
-    new_element.setAttribute('src','./public/api/register.js');
+    new_element.setAttribute('src','../../public/api/register.js');
     head.insertBefore(new_element, script);
     setTimeout(function() {
-      index.code(options)
+      register.register(options)
+    },100);
+  },
+  registerCode (options) {
+    new_element.setAttribute('src','../../public/api/register.js');
+    head.insertBefore(new_element, script);
+    setTimeout(function() {
+      register.code(options)
     },100);
   },
   home (options) {

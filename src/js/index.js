@@ -38,8 +38,13 @@ document.querySelector('.index-code').onclick = function () {
       type: 'get',
       url: './index/code',
       success: function (data) {
-        let getPop = new pop({text: data});
-        getPop.upPop();
+        let getPop = new btnPop();
+        getPop.pop({
+          btn:{
+            btn2: '确定'
+          },
+          text: data
+        });
       }
     })
   }

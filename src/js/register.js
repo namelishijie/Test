@@ -8,7 +8,8 @@ let data = {
   password: '',
   code: '',
   affirmPassword: '',
-  upSubmit: true
+  upSubmit: true,
+  getCode: true
 }
 let item = {
   items: [
@@ -50,6 +51,29 @@ document.querySelectorAll('input').forEach( (item, index) => {
   }
 });
 
+document.querySelector('.index-code').onclick = function () {
+  if(data.getCode && data.phone.length >= 3) {
+    data.getCode = false;
+    let _this = this;
+    let code = new getCodeTime();
+    let _data = data;
+    code.startTime({
+      success: function (data) {
+        _this.innerText = `再次获取${data}`;
+        data < 1 ? (_data.getCode = true, _this.innerText = '获取验证码') : ''
+      }
+    });
+    setAjax.ajax({
+      type: 'get',
+      url: './register/code',
+      success: function (data) {
+        let getPop = new pop();
+        getPop.upPop({text: data});
+      }
+    })
+  }
+}
+
 document.getElementsByClassName('register')[0].onclick = () => {
   if(data.upSubmit)return;
   let arrInput = Array.prototype.slice.call(document.querySelectorAll('.content-input input')),
@@ -71,7 +95,19 @@ document.getElementsByClassName('register')[0].onclick = () => {
       url: './register',
       data: obj,
       success: function () {
-        
+        let btnpop = new btnPop();
+        btnpop.pop({
+          text: '注册成功',
+          btn: {
+            btn2: '确定'
+          },
+          btn1Success () {
+            history.go(-1)
+          },
+          btn2Success () {
+            history.go(-1)
+          }
+        })
       }
     })
   }

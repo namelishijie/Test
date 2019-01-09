@@ -99,6 +99,12 @@ s, i, em {
   justify-content: center;
   align-items: center;
 }
+.areaMargin {
+  margin: 0 14px;
+}
+.areaPadding {
+  padding: 0 14px;
+}
 
 
 @keyframes pop {
