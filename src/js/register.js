@@ -58,7 +58,7 @@ document.querySelector('.index-code').onclick = function () {
     let code = new getCodeTime();
     let _data = data;
     code.startTime({
-      success: function (data) {
+      success: data => {
         _this.innerText = `再次获取${data}`;
         data < 1 ? (_data.getCode = true, _this.innerText = '获取验证码') : ''
       }
@@ -66,7 +66,7 @@ document.querySelector('.index-code').onclick = function () {
     setAjax.ajax({
       type: 'get',
       url: './register/code',
-      success: function (data) {
+      success: data => {
         let getPop = new pop();
         getPop.upPop({text: data});
       }
@@ -94,7 +94,7 @@ document.getElementsByClassName('register')[0].onclick = () => {
       type: 'post',
       url: './register',
       data: obj,
-      success: function () {
+      success: data => {
         let btnpop = new btnPop();
         btnpop.pop({
           text: '注册成功',

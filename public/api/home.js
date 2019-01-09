@@ -1,9 +1,9 @@
 const home = {
   data(options) {
     const item = {
-      'province': data.province,
-      'subject': data.subject,
-      'activity': data.activity
+      'province': apiData.province,
+      'subject': apiData.subject,
+      'activity': apiData.activity
     }
     return options.success(item);
   }

@@ -37,7 +37,6 @@ if(dom._thishref.slice(dom._thishref.lastIndexOf('/')+1, dom._thishref.length-5)
   dom.new_element.setAttribute('src','./public/api/api.js');
   document.querySelector('head').appendChild(dom.new_element);
 }
-
 /**
  * 获取ajax
  */

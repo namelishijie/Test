@@ -29,7 +29,7 @@ document.querySelector('.index-code').onclick = function () {
     let _this = this;
     let code = new getCodeTime();
     code.startTime({
-      success: function (data) {
+      success: data => {
         _this.innerText = `再次获取${data}`;
         data < 1 ? (getCode = true, _this.innerText = '获取验证码') : ''
       }
@@ -37,7 +37,7 @@ document.querySelector('.index-code').onclick = function () {
     setAjax.ajax({
       type: 'get',
       url: './index/code',
-      success: function (data) {
+      success: data => {
         let getPop = new btnPop();
         getPop.pop({
           btn:{

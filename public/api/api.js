@@ -3,49 +3,39 @@ const apis = {
   indexCode: './index/code',
   register: './register',
   registerCode: './register/code',
-  home: './home'
+  home: './home',
+  lesson: './lesson'
 }
 var new_element=document.createElement("script");
 new_element.setAttribute('type','text/javascript');
 var head = document.querySelector('head');
 var script = document.querySelector('script');
 
-// function getApi
+function setScript (url, callback) {
+  new_element.setAttribute('src',url);
+  head.insertBefore(new_element, script);
+  setTimeout(function() {
+    callback()
+  },100);
+}
 
 const api = {
   index (options) {
-    new_element.setAttribute('src','./public/api/index.js');
-    head.insertBefore(new_element, script);
-    setTimeout(function() {
-      index.login(options)
-    },100);
+    setScript('./public/api/index.js', () => index.login(options))
   },
   indexCode (options) {
-    new_element.setAttribute('src','./public/api/index.js');
-    head.insertBefore(new_element, script);
-    setTimeout(function() {
-      index.code(options)
-    },100);
+    setScript('./public/api/index.js', () => index.code(options))
   },
   register (options) {
-    new_element.setAttribute('src','../../public/api/register.js');
-    head.insertBefore(new_element, script);
-    setTimeout(function() {
-      register.register(options)
-    },100);
+    setScript('../../public/api/register.js', () => register.register(options))
   },
   registerCode (options) {
-    new_element.setAttribute('src','../../public/api/register.js');
-    head.insertBefore(new_element, script);
-    setTimeout(function() {
-      register.code(options)
-    },100);
+    setScript('../../public/api/register.js', () => register.code(options))
   },
   home (options) {
-    new_element.setAttribute('src','../../public/api/home.js');
-    head.insertBefore(new_element, script);
-    setTimeout(function() {
-      home.data(options)
-    },100)
+    setScript('../../public/api/home.js', () => home.data(options))
   },
+  lesson (options) {
+    setScript('../../public/api/lesson.js', () => lesson.data(options))
+  }
 }

@@ -4,3 +4,13 @@ new stateBar({
   right: '<i class="iconfont icon-iconfontmark"></i>',
   id: 'bar'
 })
+
+setAjax.ajax({
+  url: './lesson',
+  type: 'get',
+  success: data => {
+    for( var key in data) {
+      
+    }
+  }
+})
