@@ -15,14 +15,14 @@ var dom = {
 }
 
 // 判断是否登录
-if(!window.sessionStorage.getItem('toKen')) {
-  let last = dom._thishref.slice(dom._thishref.lastIndexOf('/')+1, dom._thishref.length-5);
-  if( last != 'register' ) {
-    if( last != 'index' ) {
-      window.location.href= '../../index.html';
-    }
-  }
-}
+// if(!window.sessionStorage.getItem('toKen')) {
+//   let last = dom._thishref.slice(dom._thishref.lastIndexOf('/')+1, dom._thishref.length-5);
+//   if( last != 'register' ) {
+//     if( last != 'index' ) {
+//       window.location.href= '../../index.html';
+//     }
+//   }
+// }
 
 dom.new_element.setAttribute('type','text/javascript');
 dom.new_element_data.setAttribute('type','text/javascript');
