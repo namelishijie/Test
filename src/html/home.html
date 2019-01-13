@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../../public/iconfont/font_9ztcu7g0qdi/iconfont.css">
+  <link rel="stylesheet" href="../../lib/swiper/swiper.min.css">
+  <link rel="stylesheet" href="../../public/iconfont/font_5hb6cpzigq3/iconfont.css">
+  <link rel="stylesheet" href="../../public/css/common.css">
   <title>Title</title>
 </head>
+
 <body>
   <div class="homeTop">
     <div class="homeTopLeft">
       <div class="homeTopLeftBox">
         <div class="homeTopLeftBoxSite">广州</div>
         <i class="iconfont icon-icon11"></i>
-        <div></div>
+        <div class="province-top">
+          <ul>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="homeTopCenter">
@@ -21,21 +29,136 @@
       <input type="text" placeholder="请输入科目">
     </div>
     <div class="homeTopRight">
-        <i class="iconfont icon-iconfontmark"></i>
+      <i class="iconfont icon-iconfontmark"></i>
     </div>
   </div>
-  <div class="homeSlideshowbox">
-    <div class="homeSlideshow">
+  <div class="homeSlideshowbox swiper-container">
+    <div class="homeSlideshow swiper-wrapper">
+      <div class="swiper-slide" style="display: flex;">
+        <ul class="homeSlideshowdh">
+          <!-- <li class="swiper-slide-url">
+              <div>
+              </div>
+              <div class="swiper-slide-name"></div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="homeSlideshowSwiper swiper-pagination">
+      <span></span>
+    </div>
+  <div>
+    <div class="headline">
       <ul>
-        <li>
-          <img src="../images/navIcon/aoshu.png" alt="">
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two headline-left"></div>
         </li>
-        <li>名字</li>
+        <li class="headline-name">找老师</li>
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two"></div>
+        </li>
       </ul>
     </div>
   </div>
+  <div class="option">
+    <div class="optionLeft">
+      <div class="optionLeft-left">选择年级</div>
+      <div class="optionleft-left">
+          <i class="iconfont icon-icon11 fontSize"></i>
+      </div>
+    </div>
+    <div class="optionLeft">
+      <div class="optionLeft-right-text">选择老师</div>
+      <div class="optionLeft-right">
+        <i class="iconfont icon-icon11 fontSize"></i>
+      </div>
+    </div>
+    <div class="grade">
+      <ul>
+        <li>选择年级</li>
+        <li>1-6年级</li>
+        <li>7-9年级</li>
+      </ul>
+    </div>
+    <div class="grade-two">
+      <ul>
+        <li>选择老师</li>
+        <li>在线老师</li>
+        <li>上门老师</li>
+      </ul>
+    </div>
+  </div>
+  <div class="select">
+      <ul>
+        <li class="select-left">选上门老师</li>
+        <li class="select-right">选在线老师</li>
+      </ul>
+  </div>
+  <div>
+    <div class="headline">
+      <ul>
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two headline-left"></div>
+        </li>
+        <li class="headline-name">热门活动</li>
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="hot">
+    <div class="hot-left"></div>
+    <div class="hot-right">
+      <div class="hot-right-top"></div>
+      <div class="hot-right-buttom"></div>
+    </div>
+  </div>
+  <div>
+    <div class="headline">
+      <ul>
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two headline-left"></div>
+        </li>
+        <li class="headline-name">热门活动</li>
+        <li class="headlineperiphery-top">
+          <div class="headlineLeft-One"></div>
+          <div class="headlineLeft-Two"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="recommend">
+      <div class="recommend-left"></div>
+      <div class="recommend-center">
+        <div>小初数学李老师</div>
+        <div>
+          <ul>
+            <li>
+              <i class="iconfont icon-iconfontstar recommend-center-icon"></i>
+              <i class="iconfont icon-iconfontstar recommend-center-icon"></i>
+              <i class="iconfont icon-iconfontstar recommend-center-icon"></i>
+              <i class="iconfont icon-iconfontstar recommend-center-icon"></i>
+              <i class="iconfont icon-iconfontstar"></i>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="recommend-center-bottom">朋友圈</div>
+      </div>
+      <div class="recommend-right">￥150元</div>
+    </div>
+  </div>
+  <div class="bottom-body"></div>
 </body>
 </html>
+<script src="../../lib/swiper/swiper.min.js"></script>
 <script src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 <script src="../../public/js/common.js"></script>
 <script src="../js/home.js"></script>
