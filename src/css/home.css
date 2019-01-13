@@ -53,20 +53,234 @@
 .homeTopRight i {
     font-size: 1.15rem;
 }
+.province-top {
+    width: 95%;
+    white-space:normal; 
+    position: absolute;
+    left: 0.5rem;
+    top: 3.1rem;
+    background-color:#fff;
+    color: #000;
+    display: none; 
+    z-index:11;  
+}
+.province-top ul li {
+    display:inline-block;
+    margin: 0.3rem 0.5rem;
+}
 /* 轮播图 */
 .homeSlideshowbox{
     display: flex;
-}
-.homeSlideshow {
-    width: 20%;
-    margin-top: 0.85rem;
+    margin: 0.78rem;
 }
 .homeSlideshow img {
     width: 70%;
 }
-.homeSlideshow ul li {
+.swiper-slide-url {
+    display:inline-block;
+    text-align: center;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 20%;
+}
+.homeSlideshowdh {
+    display: flex;
+    width: 100%;
+}
+.homeSlideshowSwiper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.homeSlideshowSwiper span {
+    width: 1rem;
+    height: 4px;
+    border: 1px solid #e6e6e6;
+    background-color:#e6e6e6;
+    border-radius: 10px;
+    display: block;
+    margin: 0.35rem 2px 1rem 2px;
+}
+/* 标题 */
+.headline {
+    margin-top:1rem; 
+}
+.headline ul{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.headline ul li {
+    display: block
+}
+.headlineperiphery-top {
+    width: 25%;
+}
+.headlineLeft-One {
+    width: 100%;
+    height: 0.35rem;
+    background-color:#20e581;
+    border-radius: 10px;
+}
+.headlineLeft-Two {
+    width: 50%;
+    height: 0.35rem;
+    background-color:#20e581;
+    border-radius: 10px;
+    margin-top: 0.15rem
+}
+.headline-name {
+    margin: 0.4rem;
+}
+.headline-left {
+    float: right;
+}
+/* 选项 */
+.option {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.35rem;
+    position: relative;
+}
+.optionLeft {
+    width: 50%;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    color: #e5e5e5;
+    margin: 0 1rem;
+    overflow:hidden;
+    display: flex;
+}
+.optionLeft-left {
     font-size: 0.8rem;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.optionLeft-right-text {
+    font-size: 0.8rem;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.optionLeft-right,.optionleft-left{
+    width: 15%;
+    background-color: #e5e5e5;
+    color:#acacac;
+    text-align: center;
+}
+.grade {
+    background-color:#fff;
+    position: absolute;
+    left: 23px;
+    top:22.5px;
+    width: 32%;
+    border:1px solid #acacac;
+    text-align: center;
+    display: none;
+}
+.grade-two {
+    background-color:#fff;
+    position: absolute;
+    right: 42px;
+    top:22.5px;
+    width: 32%;
+    border:1px solid #acacac;
+    text-align: center;
+    display: none;
+}
+.grade-color{
+    background-color:#e5e5e5; 
+}
+/* 选择老师 */
+.select {
+    background-color: #20e581;
+    border-radius: 20px; 
+    margin: 0.63rem 0.65rem 0 0.65rem;
+}
+.select ul {
+    display: flex;
+    justify-content: center;
+}
+.select ul li {
+    display: inline-block;
+    width: 48.9%;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: #fff;
+}
+.select-left {
+    border-right: 1px solid #fff;
+}
+.select-right {
+    border-left:1px solid #fff;
+}
+/* 热门活动图片 */
+.hot {
+    margin: 1.125rem 0.75rem 0 0.75rem;
+    display: flex
+}
+.hot-left {
+    background-color: #434343;
+    width: 50%;
+    height: 8.4rem;
+    margin-right: 0.25rem;
+}
+.hot div {
+    border-radius: 10px;
+}
+.hot-right {
+    margin-left: 0.25rem;
+    width: 50%;
+}
+.hot-right div {
+    background-color: #343434;
+    height: 4rem;
+}
+.hot-right-top {
+    margin-bottom: 0.375rem;
+}
+/* 推荐 */
+.recommend {
+    margin: 1.875rem 0.75rem;
+    display:flex;
+    font-size: 0.75rem; 
+    border-bottom:1px solid #e5e5e5; 
+    padding-bottom: 0.5rem;
+}
+.recommend-left {
+    background-color:#343434;
+    border-radius: 10px;
+    width: 3.2rem;
+    height: 3.25rem;
+    margin-right:0.7rem; 
+}
+.recommend-center {
+    width: 56%;
+}
+.recommend-center ul li{
+    display: inline-block;
+}
+.recommend-center-icon {
+    color: yellow;
+}
+.recommend-center-bottom {
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    display: inline-block;
+    padding: 0.1rem 0.135rem;
+}
+.recommend-right {
+    color: red;
+    text-align: right;
+    width: 20%;
+}
+/* 底部空隙 */
+.bottom-body {
+    height: 1.5rem;
 }
