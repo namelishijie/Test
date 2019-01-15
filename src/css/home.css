@@ -71,7 +71,7 @@
 /* 轮播图 */
 .homeSlideshowbox{
     display: flex;
-    margin: 0.78rem;
+    margin: 0.78rem 0 0;
 }
 .homeSlideshow img {
     width: 70%;
@@ -83,9 +83,12 @@
     font-size: 0.8rem;
     width: 20%;
 }
-.homeSlideshowdh {
+.swiper-slide {
     display: flex;
-    width: 100%;
+}
+.homeSlideshowdh {
+    width: 20%;
+    text-align: center;
 }
 .homeSlideshowSwiper{
     width: 100%;
@@ -247,7 +250,7 @@
 }
 /* 推荐 */
 .recommend {
-    margin: 1.875rem 0.75rem;
+    margin:0.75rem;
     display:flex;
     font-size: 0.75rem; 
     border-bottom:1px solid #e5e5e5; 
@@ -263,7 +266,7 @@
 .recommend-center {
     width: 56%;
 }
-.recommend-center ul li{
+.icon-fosize{
     display: inline-block;
 }
 .recommend-center-icon {

@@ -1,9 +1,4 @@
-var mySwiper = new Swiper('.swiper-container', {
-    watchSlidesProgress: true,
-    watchSlidesVisibility: true,
-    pagination: '.swiper-pagination',
-    paginationHide: true,
-})
+
 setFooter({
     active: 1, //当前位置
     success: function (data) {
@@ -15,15 +10,63 @@ setAjax.ajax({
     url: './home',
     data: "json",
     success: function (data) {
+        // 地区选择
         for (var i = 0; i < data.province.length; i++) {
             var arr = "<li>" + data.province[i] + "</li>";
             $(".province-top ul").append(arr)
         }
-        for (var i = 0; i < data.subject.length; i++) {
-            var arr = data.subject.slice(0, 5)[i].url;
-            var url = "<li class=" + "swiper-slide-url" + "><div><img src=" + arr + "></div><div class=" + "swiper-slide-name" + ">" + data.subject[i].name + "</div></li>";
-            $(".homeSlideshowdh").append(url);
+        $(".province-top ul li").click(function () {
+            $(".homeTopLeftBoxSite").text($(this).text())
+        })
+        // 轮播图
+        var add = [];
+        function swiperArr() {
+            var div = "<div class=" + "swiper-slide" + " style=" + "display: flex;" + ">";
+            for (var key in add) {
+                div += "<div class=" + "homeSlideshowdh" + "><img src=" + add[key].url + "><p>" + add[key].name + "</p></div>";
+            }
+            div += "</div>";
+            $(".homeSlideshow.swiper-wrapper").append(div);
+            add = [];
         }
+        for (var i = 0; i < data.subject.length; i++) {
+            if ((i + 1) % 5 == 0) {
+                add.push(data.subject[i]);
+                swiperArr();
+            } else {
+                add.push(data.subject[i])
+            }
+        }
+        if (add.length != "") {
+            swiperArr();
+        }
+        var mySwiper = new Swiper('.swiper-container', {
+            watchSlidesProgress: true,
+            watchSlidesVisibility: true,
+            pagination: '.swiper-pagination',
+            paginationHide: true,
+        });
+        // 推荐
+        var acc;
+        for (var i = 0; i < data.activity.length; i++) {
+            $(".headline-box-bottom").append("<div class=" + "recommend" + "><div class=" + "recommend-left" + "></div> <div class=" + "recommend-center" + "><div>" + data.activity[i].name + "</div><div class=" + "recommend-center-font" + "><ul><li class=" + "icon-fosize" + "></li></ul></div><div class=" + "recommend-center-bottom" + ">朋友圈</div></div><div class=" + "recommend-right" + ">￥" + data.activity[i].money + "</div></div>");
+            acc=data.activity[i].star;
+        }
+        for (var i = 0; i < 5; i++) {
+            var font = "<i class='iconfont icon-iconfontstar'></i>";
+            $(".icon-fosize").append(font);
+        }
+        for(var c=0;c<acc;c++){
+            console.log(acc[k])
+            if(c>=data.activity[c].star){
+                
+            }else{
+                $(".icon-iconfontstar").addClass("recommend-center-icon");
+            }
+            break; 
+        }
+
+
     },
     error: function () { }
 })
@@ -34,27 +77,27 @@ $(".homeTopLeftBox").click(function () {
         $(".province-top").css("display", "none")
     }
 })
-$(".optionleft-left").click(function(){
-    if($(".grade").css("display") == "none"){
+$(".optionleft-left").click(function () {
+    if ($(".grade").css("display") == "none") {
         $(".grade").css("display", "inline-block");
-    }else {
+    } else {
         $(".grade").css("display", "none")
     }
 })
-$(".grade ul li").click(function(){
+$(".grade ul li").click(function () {
     $(this).addClass("grade-color").siblings().removeClass("grade-color");
     $(".optionLeft-left").text($(this).text())
-    $(".grade").css("display","none")
+    $(".grade").css("display", "none")
 })
-$(".optionLeft-right").click(function(){
-    if($(".grade-two").css("display") == "none"){
+$(".optionLeft-right").click(function () {
+    if ($(".grade-two").css("display") == "none") {
         $(".grade-two").css("display", "inline-block");
-    }else {
+    } else {
         $(".grade-two").css("display", "none")
     }
 })
-$(".grade-two ul li").click(function(){
+$(".grade-two ul li").click(function () {
     $(this).addClass("grade-color").siblings().removeClass("grade-color");
     $(".optionLeft-right-text").text($(this).text())
-    $(".grade-two").css("display","none")
+    $(".grade-two").css("display", "none")
 })
