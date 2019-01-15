@@ -17,17 +17,17 @@ var apiData = {
   activity: [
     {
       'name': '小初数学李老师',
-      'money': '150起',
+      'money': '260起',
       'star': '4',
-      'schoolAge': '12年',
+      'schoolAge': '20年',
       'instruction': '100'
     },
     {
       'name': '小初数学李老师',
-      'money': '150起',
+      'money': '200起',
       'star': '4',
-      'schoolAge': '12年',
-      'instruction': '100'
+      'schoolAge': '10年',
+      'instruction': '150'
     },
     {
       'name': '小初数学李老师',
@@ -81,45 +81,45 @@ var apiData = {
   ],
   lesson: [
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
+      'timeStart': '21:00',
+      'timeEnd': '22:00',
       'name': '广州小青',
       'person': '100',
       'date': '1月6'
     },
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
-      'name': '广州小青',
-      'person': '100',
+      'timeStart': '18:00',
+      'timeEnd': '20:00',
+      'name': '广州小红',
+      'person': '1001',
       'date': '1月6'
     },
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
-      'name': '广州小青',
-      'person': '100',
+      'timeStart': '09:00',
+      'timeEnd': '10:00',
+      'name': '广州小蓝',
+      'person': '102',
       'date': '1月6'
     },
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
-      'name': '广州小青',
-      'person': '100',
+      'timeStart': '14:00',
+      'timeEnd': '16:00',
+      'name': '广州小黑',
+      'person': '1200',
       'date': '1月6'
     },
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
-      'name': '广州小青',
-      'person': '100',
+      'timeStart': '18:00',
+      'timeEnd': '20:00',
+      'name': '广州小白',
+      'person': '10000',
       'date': '1月6'
     },
     {
-      'timeStart': '20:00',
-      'timeEnd': '21:00',
-      'name': '广州小青',
-      'person': '100',
+      'timeStart': '09:00',
+      'timeEnd': '11:00',
+      'name': '广州小彩',
+      'person': '500',
       'date': '1月6'
     },
   ]
