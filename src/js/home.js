@@ -47,26 +47,18 @@ setAjax.ajax({
             paginationHide: true,
         });
         // 推荐
-        var acc;
         for (var i = 0; i < data.activity.length; i++) {
             $(".headline-box-bottom").append("<div class=" + "recommend" + "><div class=" + "recommend-left" + "></div> <div class=" + "recommend-center" + "><div>" + data.activity[i].name + "</div><div class=" + "recommend-center-font" + "><ul><li class=" + "icon-fosize" + "></li></ul></div><div class=" + "recommend-center-bottom" + ">朋友圈</div></div><div class=" + "recommend-right" + ">￥" + data.activity[i].money + "</div></div>");
-            acc=data.activity[i].star;
         }
         for (var i = 0; i < 5; i++) {
             var font = "<i class='iconfont icon-iconfontstar'></i>";
-            $(".icon-fosize").append(font);
+            $(".icon-fosize").append(font);   
         }
-        for(var c=0;c<acc;c++){
-            console.log(acc[k])
-            if(c>=data.activity[c].star){
-                
-            }else{
-                $(".icon-iconfontstar").addClass("recommend-center-icon");
+        for(var j=0;j<data.activity.length;j++){
+            for (var c = 0; c< data.activity[j].star; c++) {
+                $(".recommend").eq(j).find(".iconfont").eq(c).addClass("recommend-center-icon");
             }
-            break; 
         }
-
-
     },
     error: function () { }
 })
