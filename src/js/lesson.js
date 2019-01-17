@@ -14,6 +14,7 @@ setAjax.ajax({
       details.classList.add('details');
       details.innerHTML = `
         <div class="details-video">
+          <button class="lookVideo">看直播</button>
           <div class="video-time">
             <p>${data.data[key].date}&nbsp;&nbsp;${data.data[key].timeStart}-${data.data[key].timeEnd}</p>
           </div>

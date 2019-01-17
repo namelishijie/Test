@@ -10,6 +10,15 @@ html {
   background-color: #535353;
   position: relative;
 }
+.details .details-video .lookVideo {
+  position: absolute;
+  top: 15px;
+  right: 24px;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.5);
+}
 .details .details-video .video-time {
   width: 100%;
   position: absolute;
