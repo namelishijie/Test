@@ -1,0 +1,40 @@
+#bar {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.recommendBox {
+  padding: 0 30/2px;
+  .recommend {
+    display: flex;
+    padding: 30/2px 0;
+    .recommend-left {
+      width: 130/2px;
+      min-width: 130/2px;
+      height: 130/2px;
+      background-color: #434343;
+      border-radius: 5px;
+    }
+    .recommend-right {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      div {
+        &:first-child {
+          display: flex;
+          justify-content: space-between;
+          span:last-child {
+            color:#FF570D;
+          }
+        }
+        &:last-child {
+          > span {
+            padding: 2px 4px;
+            background-color: #E5E5E5;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
