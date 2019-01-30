@@ -3,6 +3,7 @@ const index = {
     let user = 'aaa', code = this.codeNum, localUser = window.localStorage.getItem('localUser');
     if(options.type.toLowerCase() == 'post' && options.data) {
       if(options.data.user == user || options.data.user == localUser && options.data.password == code) {
+        changeApi.user.name = options.data.user
         window.sessionStorage.setItem('toKen', true);
         return options.success({code: 200, url: './src/html/home.html'});
       }

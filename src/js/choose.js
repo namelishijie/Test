@@ -7,3 +7,9 @@ new stateBar({
   color: '#000'
 })
 
+setAjax.ajax({
+  url: './mine',
+  success: function (data) {
+    console.log(data.name)
+  }
+})

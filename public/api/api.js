@@ -4,7 +4,8 @@ const apis = {
   register: './register',
   registerCode: './register/code',
   home: './home',
-  lesson: './lesson'
+  lesson: './lesson',
+  mine: './mine'
 }
 var new_element=document.createElement("script");
 new_element.setAttribute('type','text/javascript');
@@ -37,5 +38,8 @@ const api = {
   },
   lesson (options) {
     setScript('../../public/api/lesson.js', () => lesson.data(options))
+  },
+  mine (options) {
+    setScript('../../public/api/mine.js', () => mine.data(options))
   }
 }

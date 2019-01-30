@@ -1,4 +1,16 @@
-var apiData = {
+var changeApi = {
+  user: {
+    name: 1
+  }
+}
+
+const getChangeApi = window.sessionStorage.getItem('changeApi')
+if(getChangeApi) {
+  changeApi = JSON.parse(getChangeApi);
+}
+
+const apiData = {
+  user: changeApi.user,
   province:  ["北京","天津","上海","重庆","河北","山西","辽宁","吉林","黑龙江","江苏","浙江","安徽","福建","江西","山东","河南","湖北","湖南","广东","海南","四川","贵州","云南","陕西","甘肃","青海","内蒙古","广西","西藏","宁夏","新疆维吾尔自治区","香港","澳门","台湾"],
   subject: [
     {'url': '../images/navIcon/shuxue.png', 'name': '数学'},
@@ -124,3 +136,25 @@ var apiData = {
     },
   ]
 }
+
+function setDefine (object) {
+  if(object.constructor !== Object || Object.keys(object) == 0) return
+  for(var key in object) {
+    getDefine(object, key, object[key])
+  }
+}
+
+function getDefine (object, key, value) {
+  setDefine(value)
+  Object.defineProperty(object, key, {
+    get () {
+      return value
+    },
+    set (object) {
+      value = object
+      window.sessionStorage.setItem('changeApi', JSON.stringify(changeApi))
+    }
+  })
+}
+
+setDefine(changeApi)
